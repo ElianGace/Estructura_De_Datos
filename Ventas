@@ -33,3 +33,9 @@ ventas.insertar_venta("Deportes", "Febrero", 2500)
 ventas.buscar_venta("Ropa", "Enero")
 ventas.eliminar_venta("Ropa", "Enero")
 ventas.buscar_venta("Ropa", "Enero")
+
+Simula un sistema de las gestiones que hay en la venta mensual para los tres departamentos y cada uno registra las ventas de cada mes
+del año desde enero a diciembre 
+Los metodos como insertar venta: permite que se pueda agregar o actualizar la venta de un mes que sea especifico
+Buscar venta: Permite buscar y chequear la venta del mes que sea especifico que se haya  puesto 
+Eliminar venta: Permite eliminar la venta de aquel mes que sea especifico 
