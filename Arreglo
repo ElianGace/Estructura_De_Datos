@@ -1,0 +1,23 @@
+import numpy as np
+import time
+
+def probar_rendimiento(num_alumnos, num_materias):
+    matriz = np.random.randint(0, 101, size=(num_alumnos, num_materias))
+
+    alumno_idx = np.random.randint(0, num_alumnos)
+    materia_idx = np.random.randint(0, num_materias)
+
+    inicio = time.time()
+    calificacion = matriz[alumno_idx, materia_idx]
+    fin = time.time()
+
+    print(f"Alumnos: {num_alumnos}, Materias: {num_materias}")
+    print(f"Calificación del alumno {alumno_idx + 1} en la materia {materia_idx + 1}: {calificacion}")
+    print(f"Tiempo de búsqueda: {fin - inicio:.10f} segundos\n")
+
+alumnos_list = [1000, 10000, 100000]
+materias_list = [100, 500, 10000]
+
+for num_alumnos in alumnos_list:
+    for num_materias in materias_list:
+        probar_rendimiento(num_alumnos, num_materias)
