@@ -1,0 +1,59 @@
+class Pila:
+    def __init__(self, capacidad):
+        self.capacidad = capacidad  
+        self.pila = []  
+
+    def insertar(self, elemento):
+        if len(self.pila) < self.capacidad:
+            self.pila.append(elemento)
+            print(f"Insertar: {elemento}")
+        else:
+            print("Error: Desbordamiento de pila")
+
+    def eliminar(self):
+        if len(self.pila) > 0:
+            elemento = self.pila.pop()
+            print(f"Eliminar: {elemento}")
+            return elemento
+        else:
+            print("Error: Subdesbordamiento de pila")
+            return None
+
+    def estado(self):
+        print(f"Pila: {self.pila}")
+        print(f"Tope: {len(self.pila)}")
+
+
+pila = Pila(8)
+
+
+pila.estado()
+
+pila.insertar("X")
+pila.estado()
+
+pila.insertar("Y")
+pila.estado()
+
+z = pila.eliminar()
+pila.estado()
+
+t = pila.eliminar()
+pila.estado()
+
+u = pila.eliminar()
+pila.estado()
+
+pila.insertar("V")
+pila.estado()
+
+pila.insertar("W")
+pila.estado()
+
+p = pila.eliminar()
+pila.estado()
+
+pila.insertar("R")
+pila.estado()
+
+print(f"Elementos finales en la pila: {len(pila.pila)}")
