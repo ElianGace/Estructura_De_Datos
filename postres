@@ -1,0 +1,56 @@
+postres = {
+    "Pastel de chocolate": ["Harina", "Azúcar", "Cacao", "Leche"],
+    "Flan": ["Leche", "Huevo", "Azúcar", "Vainilla"]
+}
+
+def mostrar_ingredientes(postre):
+    if postre in postres:
+        print(f"Ingredientes de {postre}: {', '.join(postres[postre])}")
+    else:
+        print("El postre no existe.")
+
+def agregar_ingredientes(postre, ingredientes):
+    if postre in postres:
+        postres[postre].extend(ingredientes)
+        print(f"Se han agregado {ingredientes} a {postre}.")
+    else:
+        print("El postre no existe.")
+
+
+def eliminar_ingredientes(postre, ingredientes):
+    if postre in postres:
+        postres[postre] = [ing for ing in postres[postre] if ing not in ingredientes]
+        print(f"Se han eliminado {ingredientes} de {postre}.")
+    else:
+        print("El postre no existe.")
+
+
+def agregar_postre(postre, ingredientes):
+    if postre not in postres:
+        postres[postre] = ingredientes
+        print(f"Se ha agregado {postre} con ingredientes {ingredientes}.")
+    else:
+        print("El postre ya existe.")
+
+
+def eliminar_postre(postre):
+    if postre in postres:
+        del postres[postre]
+        print(f"Se ha eliminado {postre}.")
+    else:
+        print("El postre no existe.")
+
+
+def eliminar_duplicados():
+    for postre in postres:
+        postres[postre] = list(set(postres[postre]))
+    print("Se han eliminado los ingredientes duplicados.")
+
+
+if __name__ == "__main__":
+    mostrar_ingredientes("Pastel de chocolate")
+    agregar_ingredientes("Pastel de chocolate", ["Mantequilla", "Huevos"])
+    eliminar_ingredientes("Pastel de chocolate", ["Azúcar"])
+    agregar_postre("Tarta de fresas", ["Fresas", "Harina", "Crema"])
+    eliminar_duplicados()
+    eliminar_postre("Tarta de fresas")
