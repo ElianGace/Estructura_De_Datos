@@ -1,6 +1,6 @@
 postres = {
     "Pastel de chocolate": ["Harina", "Azúcar", "Cacao", "Leche", "Azúcar"],
-    "Flan": ["Leche", "Huevo", "Azúcar", "Vainilla", "Huevo"]
+    "Flan": ["Leche", "Huevo", "Azúcar", "Vainilla", "Azúcar"]
 }
 
 def mostrar_ingredientes(postre):
@@ -42,23 +42,18 @@ def eliminar_duplicados():
         postres[postre] = list(set(postres[postre]))
     print("Se han eliminado los ingredientes duplicados.")
 
-
-def eliminar_postres_duplicados():
-    global postres  
-    postres_unicos = {}
+def explicar_efecto_eliminacion():
+    print("Después de eliminar duplicados, las listas han cambiado:")
     for postre, ingredientes in postres.items():
-        ingredientes_tuple = tuple(sorted(ingredientes))
-        if ingredientes_tuple not in postres_unicos.values():
-            postres_unicos[postre] = ingredientes_tuple
-    postres = {k: list(v) for k, v in postres_unicos.items()}
-    print("Se han eliminado los postres duplicados.")
-
+        print(f"{postre}: {ingredientes}")
+    print("El orden de los ingredientes puede haber cambiado, ya que los conjuntos en Python no conservan el orden original.")
 
 if __name__ == "__main__":
     mostrar_ingredientes("Pastel de chocolate")
     agregar_ingredientes("Pastel de chocolate", ["Mantequilla", "Huevos"])
     eliminar_ingredientes("Pastel de chocolate", ["Azúcar"])
-    agregar_postre("Tarta de fresas", ["Fresas", "Harina", "Crema"])
+    agregar_postre("Tarta de fresas", ["Fresas", "Harina", "Crema", "Fresas"])
     eliminar_duplicados()
-    eliminar_postres_duplicados()
+    explicar_efecto_eliminacion()
     eliminar_postre("Tarta de fresas")
+El programa gestiona una lista de postres con sus ingredientes. Se eliminaron ingredientes repetidos usando set(), lo que también alteró el orden de los ingredientes. Además, se implementó la eliminación de postres duplicados comparando sus ingredientes.
