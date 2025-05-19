@@ -1,0 +1,16 @@
+def busqueda_secuencial(lista, objetivo):
+    for i in range(len(lista)):
+        if lista[i] == objetivo:
+            return i  # Retorna el índice donde se encontró
+    return -1  # No se encontró
+
+# Lista de nombres desordenada
+asistentes = ["Juan", "Lucía", "Pedro", "Ana", "Sofía", "Luis"]
+nombre_buscar = "Ana"
+
+resultado = busqueda_secuencial(asistentes, nombre_buscar)
+
+if resultado != -1:
+    print(f"{nombre_buscar} asistió a clase. (índice {resultado})")
+else:
+    print(f"{nombre_buscar} no asistió a clase.")
