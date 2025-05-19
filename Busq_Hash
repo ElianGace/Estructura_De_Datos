@@ -1,0 +1,14 @@
+productos = {
+    "Pan": 1.5,
+    "Leche": 2.0,
+    "Queso": 3.5,
+    "Huevos": 2.2,
+    "Jugo": 1.8
+}
+
+producto_buscar = "Queso"
+
+if producto_buscar in productos:
+    print(f"El precio de {producto_buscar} es ${productos[producto_buscar]}")
+else:
+    print(f"{producto_buscar} no está en la lista.")
